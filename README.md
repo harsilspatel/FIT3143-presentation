@@ -34,7 +34,24 @@ three variations of row-based partition
 ### one row, parallel io
 
 
+
 ### batch of rows, parallel io
+
+```diff
+init
++ char row[charsInRow*rowBatchSize];
+
+# looping through batch of rows
+
++ rowOffset = batchNumber*charsInRow + iX*3;
++ row[rowOffset+0] = color[0];
++ row[rowOffset+1] = color[1];
++ row[rowOffset+2] = color[2];
+
+in the outer loop, after computing RGB value all the pixels in all the rows in the specified batch
++ MPI_File_write_at(fp, headerSize + charsInRow*iY, row, sizeof(row), MPI_CHAR, MPI_STATUS_IGNORE);
+```
+
 <img src="assets/batch_rows.png" width="60%">
 
 
