@@ -69,7 +69,7 @@ in the outer loop, after computing RGB value all the pixels in all the rows in t
 + MPI_File_write_at(fp, headerSize + charsInRow*iY, row, sizeof(row), MPI_CHAR, MPI_STATUS_IGNORE);
 ```
 </br>
-<img src="assets/batch_rows.png" width="60%">
+<img src="assets/batch_rows.png" width="80%">
 
 
 ### one row, root manages io
@@ -94,4 +94,4 @@ in the outer loop, after computing RGB value all the pixels in each row
 
 
 ## conclusion
-<img src="assets/comparisions.png" width="60%">
+<img src="assets/comparisions.png" width="80%">
