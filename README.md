@@ -28,6 +28,9 @@ root
 # start measuring the time and print completion messages
 ```
 
+</br>
+</br>
+
 
 ## row-based
 three variations of row-based partition
@@ -91,7 +94,11 @@ in the outer loop, after computing RGB value all the pixels in each row
 + if (rank == root) fwrite(buffer, 1, charsInRow*nproc, fp);
 ```
 
+</br>
 
 
 ## conclusion
 <img src="assets/comparisions.png" width="80%">
+
+
+CPU model: Xeon-E5-2667-v3 3.20GHz (MonARCH)
